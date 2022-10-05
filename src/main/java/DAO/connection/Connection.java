@@ -1,4 +1,5 @@
-package connection;
+package DAO.connection;
 
 public class ConnectionCMS {
+    
 }
