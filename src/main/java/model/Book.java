@@ -3,93 +3,94 @@ package model;
 import java.util.List;
 
 public class Book {
-    private int id;
-    private String code;
-    private String name;
-    private String author;
-    private double price;
-    private String image;
-    private String description;
+    private int bookId;
+    private String bookCode;
+    private String bookName;
+    private String bookAuthor;
+    private double bookPrice;
+    private String bookImage;
+    private String bookDescription;
+
+    public Book(int bookId, String bookCode, String bookName, String bookAuthor, double bookPrice, String bookImage, String bookDescription) {
+        this.bookId = bookId;
+        this.bookCode = bookCode;
+        this.bookName = bookName;
+        this.bookAuthor = bookAuthor;
+        this.bookPrice = bookPrice;
+        this.bookImage = bookImage;
+        this.bookDescription = bookDescription;
+    }
+
+    public Book(int bookId, String bookCode, String bookName, String bookAuthor, double bookPrice, String bookImage, String bookDescription, List<Category> categories) {
+        this.bookId = bookId;
+        this.bookCode = bookCode;
+        this.bookName = bookName;
+        this.bookAuthor = bookAuthor;
+        this.bookPrice = bookPrice;
+        this.bookImage = bookImage;
+        this.bookDescription = bookDescription;
+        this.categories = categories;
+    }
+
     private List<Category> categories;
 
     public Book() {
     }
 
-    public Book(int id, String code, String name, String author, double price, String image, String description) {
-        this.id = id;
-        this.code = code;
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.image = image;
-        this.description = description;
+    public int getBookId() {
+        return bookId;
     }
 
-    public Book(int id, String code, String name, String author, double price, String image, String description, List<Category> categories) {
-        this.id = id;
-        this.code = code;
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.image = image;
-        this.description = description;
-        this.categories = categories;
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
-    public int getId() {
-        return id;
+    public String getBookCode() {
+        return bookCode;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBookCode(String bookCode) {
+        this.bookCode = bookCode;
     }
 
-    public String getCode() {
-        return code;
+    public String getBookName() {
+        return bookName;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
 
-    public String getName() {
-        return name;
+    public String getBookAuthor() {
+        return bookAuthor;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBookAuthor(String bookAuthor) {
+        this.bookAuthor = bookAuthor;
     }
 
-    public String getAuthor() {
-        return author;
+    public double getBookPrice() {
+        return bookPrice;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setBookPrice(double bookPrice) {
+        this.bookPrice = bookPrice;
     }
 
-    public double getPrice() {
-        return price;
+    public String getBookImage() {
+        return bookImage;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setBookImage(String bookImage) {
+        this.bookImage = bookImage;
     }
 
-    public String getImage() {
-        return image;
+    public String getBookDescription() {
+        return bookDescription;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBookDescription(String bookDescription) {
+        this.bookDescription = bookDescription;
     }
 
     public List<Category> getCategories() {

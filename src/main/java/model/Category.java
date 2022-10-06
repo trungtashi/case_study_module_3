@@ -6,7 +6,6 @@ public class Category {
     private int id;
     private String type;
     private String description;
-    private List<Book> bookList;
 
     public Category() {
     }
