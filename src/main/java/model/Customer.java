@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package model;
 
 import java.sql.Date;
@@ -126,7 +125,4 @@ public class Customer {
                 ", startDate=" + startDate +
                 '}';
     }
-=======
-package model;public class Customer {
->>>>>>> trung
 }
