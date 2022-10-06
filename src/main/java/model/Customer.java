@@ -3,27 +3,31 @@ package model;
 public class Customer {
     private int customerId;
     private String customerName;
-    private int customerAge;
     private String customerAddress;
     private String customerPhone;
     private String customerEmail;
     private String account;
     private String password;
 
-    public Customer(int customerId, String customerName, int customerAge, String customerAddress, String customerPhone, String customerEmail, String account) {
-        this.customerId = customerId;
+    public Customer(String customerName, String customerAddress, String customerPhone, String customerEmail) {
         this.customerName = customerName;
-        this.customerAge = customerAge;
+        this.customerAddress = customerAddress;
+        this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
+    }
+
+    public Customer(String customerName, String customerAddress, String customerPhone, String customerEmail, String account, String password) {
+        this.customerName = customerName;
         this.customerAddress = customerAddress;
         this.customerPhone = customerPhone;
         this.customerEmail = customerEmail;
         this.account = account;
+        this.password = password;
     }
 
-    public Customer(int customerId, String customerName, int customerAge, String customerAddress, String customerPhone, String customerEmail, String account, String password) {
+    public Customer(int customerId, String customerName, String customerAddress, String customerPhone, String customerEmail, String account, String password) {
         this.customerId = customerId;
         this.customerName = customerName;
-        this.customerAge = customerAge;
         this.customerAddress = customerAddress;
         this.customerPhone = customerPhone;
         this.customerEmail = customerEmail;
@@ -48,14 +52,6 @@ public class Customer {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
-    }
-
-    public int getCustomerAge() {
-        return customerAge;
-    }
-
-    public void setCustomerAge(int customerAge) {
-        this.customerAge = customerAge;
     }
 
     public String getCustomerAddress() {
@@ -103,7 +99,6 @@ public class Customer {
         return "Customer{" +
                 "customerId=" + customerId +
                 ", customerName='" + customerName + '\'' +
-                ", customerAge=" + customerAge +
                 ", customerAddress='" + customerAddress + '\'' +
                 ", customerPhone='" + customerPhone + '\'' +
                 ", customerEmail='" + customerEmail + '\'' +

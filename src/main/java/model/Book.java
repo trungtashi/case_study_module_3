@@ -1,5 +1,8 @@
 package model;
 
+
+import jdk.jfr.Category;
+
 import java.util.List;
 
 public class Book {
@@ -10,6 +13,15 @@ public class Book {
     private double bookPrice;
     private String bookImage;
     private String bookDescription;
+
+    public Book(String bookCode, String bookName, String bookAuthor, double bookPrice, String bookImage, String bookDescription) {
+        this.bookCode = bookCode;
+        this.bookName = bookName;
+        this.bookAuthor = bookAuthor;
+        this.bookPrice = bookPrice;
+        this.bookImage = bookImage;
+        this.bookDescription = bookDescription;
+    }
 
     public Book(int bookId, String bookCode, String bookName, String bookAuthor, double bookPrice, String bookImage, String bookDescription) {
         this.bookId = bookId;
