@@ -1,7 +1,11 @@
 .gradle
 **/build/
 .idea
+<<<<<<< HEAD
 src/main/java/connection/Connection.java
+=======
+src/main/java/DAO/connection/Connection.java
+>>>>>>> ace82e3 (trung oc)
 !src/**/build/
 
 # Ignore Gradle GUI config
@@ -20,4 +24,8 @@ gradle-app.setting
 # Eclipse Core
 .project
 # JDT-specific (Eclipse Java Development Tools)
+<<<<<<< HEAD
 .classpath
+=======
+.classpath
+>>>>>>> ace82e3 (trung oc)
