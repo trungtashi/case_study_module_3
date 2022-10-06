@@ -19,12 +19,5 @@ public class ConnectionCMS {
         return connection;
     }
 
-    public static void main(String[] args) {
-        Connection con = getConnection();
-        if(con==null){
-            System.out.println("feu");
-        }else
-            System.out.println("chu");
-    }
 
 }
