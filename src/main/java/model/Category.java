@@ -6,9 +6,11 @@ public class Category {
     private int id;
     private String type;
     private String description;
-    private List<Book> bookList;
+    private List<Category> categoryList;
 
-    public Category() {
+    public Category(String type, String description) {
+        this.type = type;
+        this.description = description;
     }
 
     public Category(int id, String type, String description) {
@@ -49,4 +51,5 @@ public class Category {
                 ", description='" + description + '\'' +
                 '}';
     }
+
 }
