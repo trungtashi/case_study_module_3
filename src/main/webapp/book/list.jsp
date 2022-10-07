@@ -38,6 +38,14 @@
               </td>
               </tr>
           </c:forEach>
+        <form action="/books" method="post">
+            <input type="text" name="search" placeholder="Enter name">
+            <input type="hidden" name="action" value="search">
+            <button type="submit" >Search</button>
+<%--            <a href="/books" >List</a>--%>
+
+        </form>
+
     </table>
 </div>
 </body>

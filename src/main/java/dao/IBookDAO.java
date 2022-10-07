@@ -11,6 +11,7 @@ public interface IBookDAO {
     public Book selectBook(int id);
 
     public List<Book> selectAllBooks();
+    List<Book> searchByName(String input_name);
 
     public boolean deleteBook(int id) throws SQLException;
 

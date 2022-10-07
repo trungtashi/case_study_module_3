@@ -15,7 +15,7 @@ public class BookDAO implements IBookDAO{
     private static final String SELECT_ALL_BOOKS="select * from books";
     private static final String DELETE_BOOKS_SQL="delete from books where id=?;";
     private static final String UPDATE_BOOKS_SQL="update books set code= ?, name= ?, author= ?, price= ?, image= ?, description= ?, where id= ?;";
-
+    private static final String SELECT_BOOKS_BY_NAME = "select * from books where name like ?";
     public BookDAO() {
     }
     protected Connection getConnection() {
@@ -123,6 +123,7 @@ public class BookDAO implements IBookDAO{
         }
         return rowUpdated;
     }
+
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
@@ -137,5 +138,28 @@ public class BookDAO implements IBookDAO{
                 }
             }
         }
+    }
+
+    public List<Book> searchByName(String input_name) {
+        List<Book> books = new ArrayList<>();
+        Connection connection = getConnection();
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_BOOKS_BY_NAME);
+            preparedStatement.setString(1,"%"+input_name+"%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int id= resultSet.getInt("id");
+                String code=resultSet.getString("code");
+                String name=resultSet.getString("name");
+                String author=resultSet.getString("author");
+                Double price=resultSet.getDouble("price");
+                String image=resultSet.getString("image");
+                String description=resultSet.getString("description");
+                books.add(new Book(id,code,name,author,price,image,description));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return books;
     }
 }

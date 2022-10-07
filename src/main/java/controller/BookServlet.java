@@ -33,6 +33,10 @@ public class BookServlet extends HttpServlet {
                     break;
                 case"edit":
                     updateBook(request,response);
+                    break;
+                case"search":
+                    searchBook(request,response);
+                    break;
             }
 
         } catch (Exception e) {
@@ -125,5 +129,12 @@ public class BookServlet extends HttpServlet {
         request.setAttribute("listBook",listBook);
         RequestDispatcher dispatcher =request.getRequestDispatcher("book/list.jsp");
         dispatcher.forward(request,response);
+    }
+    private void searchBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("search");
+        List<Book> books = bookDAO.searchByName(name);
+        request.setAttribute("listBook", books);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("book/list.jsp");
+        dispatcher.forward(request, response);
     }
 }
