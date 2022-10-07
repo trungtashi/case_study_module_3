@@ -6,8 +6,7 @@ import model.Customer;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import static Connection.Connection.getConnection;
+import static connection.ConnectionCMS.getConnection;
 
 public class CustomerDAO implements ICustomerDAO{
     private static final String INSERT_CUSTOMER_SQL = "INSERT INTO customer (`name`,address,phone,email,account,password) VALUES (?, ?, ?,?,?,?);";
