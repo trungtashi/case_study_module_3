@@ -10,7 +10,6 @@ public class Book {
     private double price;
     private String image;
     private String description;
-    private List<Category> categories;
 
     public Book(String code, String name, String author) {
     }
@@ -91,12 +90,17 @@ public class Book {
         this.description = description;
     }
 
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                ", image='" + image + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 
 }

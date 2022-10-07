@@ -1,7 +1,7 @@
 .gradle
 **/build/
 .idea
-src/main/java/DAO/connection/Connection.java
+src/main/java/connection/ConnectionCMS.java
 !src/**/build/
 
 # Ignore Gradle GUI config
