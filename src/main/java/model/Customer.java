@@ -9,7 +9,17 @@ public class Customer {
     private String account;
     private String password;
 
-    public Customer(String customerName, String customerAddress, String customerPhone, String customerEmail) {
+    public Customer(int customerId, String customerName, String customerAddress, String customerPhone, String customerEmail, String account, String password) {
+        this.customerId = customerId;
+        this.customerName = customerName;
+        this.customerAddress = customerAddress;
+        this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
+        this.account = account;
+        this.password = password;
+    }
+
+    public Customer(String customerName, String customerAddress, String customerPhone, String customerEmail, String email, String account, String password) {
         this.customerName = customerName;
         this.customerAddress = customerAddress;
         this.customerPhone = customerPhone;
@@ -23,19 +33,6 @@ public class Customer {
         this.customerEmail = customerEmail;
         this.account = account;
         this.password = password;
-    }
-
-    public Customer(int customerId, String customerName, String customerAddress, String customerPhone, String customerEmail, String account, String password) {
-        this.customerId = customerId;
-        this.customerName = customerName;
-        this.customerAddress = customerAddress;
-        this.customerPhone = customerPhone;
-        this.customerEmail = customerEmail;
-        this.account = account;
-        this.password = password;
-    }
-
-    public Customer() {
     }
 
     public int getCustomerId() {
