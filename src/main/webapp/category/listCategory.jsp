@@ -16,12 +16,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>List Category</h1>
-<h2>
-    <a href="/category?action=create">Add New Category</a>
+<h1 class="text-center">List Category</h1>
+<h2 class="text-center">
+    <a  href="/category?action=create">Add New Category</a>
 </h2>
 <table class="table table-hover">
-  <h2>List of Category</h2>
     <tr>
         <th>ID</th>
         <th>Type</th>
