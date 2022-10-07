@@ -114,3 +114,4 @@ select * from orders;
 insert into orders(customer_id, dateBuy) values
                                              (2,'2022-10-01'),
                                              (1,'2022-10-04');
+select * from books;

@@ -12,7 +12,17 @@ public class Book {
     private String description;
     private List<Category> categories;
 
-    public Book() {
+    public Book(String code, String name, String author) {
+    }
+
+    public Book(String code, String name, String author, double price, String image, String description) {
+
+        this.code = code;
+        this.name = name;
+        this.author = author;
+        this.price = price;
+        this.image = image;
+        this.description = description;
     }
 
     public Book(int id, String code, String name, String author, double price, String image, String description) {
@@ -23,17 +33,6 @@ public class Book {
         this.price = price;
         this.image = image;
         this.description = description;
-    }
-
-    public Book(int id, String code, String name, String author, double price, String image, String description, List<Category> categories) {
-        this.id = id;
-        this.code = code;
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.image = image;
-        this.description = description;
-        this.categories = categories;
     }
 
     public int getId() {
@@ -99,4 +98,5 @@ public class Book {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
+
 }
