@@ -1,20 +1,23 @@
-package dao;
+package dao1;
 
 
 import model.Customer;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static connectJDBC.Connection.getConnection;
 
-public class CustomerDAO implements ICustomerDAO{
-    private static final String INSERT_CUSTOMER_SQL = "INSERT INTO customer (customerName,customerAddress,customerPhone,customerEmail,account,password) VALUES (?, ?,?,?,?,?);";
-    private static final String SELECT_CUSTOMER_BY_ID = "select customerId,customerName,customerAddress,customerEmail,customerPhone from customer where customerId=?";
+public class CustomerDAO implements ICustomerDAO {
+    private static final String INSERT_CUSTOMER_SQL = "INSERT INTO customer (customerName,customerAddress,customerPhone,customerEmail,account,password) VALUES (?, ?, ?,?,?,?);";
+    private static final String SELECT_CUSTOMER_BY_ID = "select customerId,customerName,customerAddress,customerEmail,customerPhone,account,password from customer where customerId=?";
     private static final String SELECT_ALL_CUSTOMER = "select * from customer";
     private static final String DELETE_CUSTOMER_SQL = "delete from customer where customerId = ?;";
-    private static final String UPDATE_CUSTOMER_SQL = "update customer set customerName = ?,customerAddress=?,customerEmail= ?,customerPhone=?,account=?,password=? where customerId = ?;";
+    private static final String UPDATE_CUSTOMER_SQL = "update customer set customerName = ?,customerAddress=?,customerphone=?,customerEmail= ?,account=?,password=? where customerId = ?;";
     private static final String SEARCH_CUSTOMER_BY_NAME = "select * from customer where customerName like ?";
     private static final String SORT_BY_NAME = "select * from customer order by customerName";
     public CustomerDAO() {
@@ -54,7 +57,7 @@ public class CustomerDAO implements ICustomerDAO{
                 String customerEmail = rs.getString("customerEmail");
                 String account = rs.getString("account");
                 String password = rs.getString("password");
-                customer = new Customer(customerName,customerAddress,customerPhone,customerEmail,account,password);
+                customer = new Customer(customerName,customerAddress,customerAddress,customerPhone,customerEmail,account,password);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -77,7 +80,7 @@ public class CustomerDAO implements ICustomerDAO{
             // Step 4: Xử lý đối tượng ResultSet
             while (rs.next()) {
                 int customerId = rs.getInt("customerId");
-                String customerName = rs.getString("customerName");
+                String customerName = rs.getString("customerName");;
                 String customerAddress = rs.getString("customerAddress");
                 String customerPhone = rs.getString("customerPhone");
                 String customerEmail = rs.getString("customerEmail");
@@ -104,12 +107,13 @@ public class CustomerDAO implements ICustomerDAO{
     public boolean updateCustomer(Customer customer){
         boolean rowUpdated = false;
         try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_CUSTOMER_SQL);) {
-            statement.setString(1, customer.getCustomerName());
-            statement.setString(2, customer.getCustomerAddress());
-            statement.setString(3,customer.getCustomerEmail());
-            statement.setString(4,customer.getCustomerPhone());
-            statement.setString(5,customer.getAccount());
-            statement.setString(6,customer.getPassword());
+            statement.setInt(1,customer.getCustomerId());
+            statement.setString(2, customer.getCustomerName());
+            statement.setString(3, customer.getCustomerAddress());
+            statement.setString(4,customer.getCustomerEmail());
+            statement.setString(5,customer.getCustomerPhone());
+            statement.setString(6,customer.getAccount());
+            statement.setString(7,customer.getPassword());
             rowUpdated = statement.executeUpdate() > 0;
         } catch (SQLException e) {
             System.out.println("Cap nhat that bai");
@@ -132,7 +136,7 @@ public class CustomerDAO implements ICustomerDAO{
                 String customerEmail = rs.getString("customerEmail");
                 String account = rs.getString("account");
                 String password = rs.getString("password");
-                customers.add(new Customer( customerId,customerName,customerAddress,customerPhone,customerEmail,account,password));
+                customers.add(new Customer( customerId,  customerName,customerAddress,customerPhone,customerEmail,account,password));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -155,7 +159,7 @@ public class CustomerDAO implements ICustomerDAO{
                 String customerEmail = rs.getString("customerEmail");
                 String account = rs.getString("account");
                 String password = rs.getString("password");
-                customers.add(new Customer( customerId, customerName,customerAddress,customerPhone,customerEmail,account,password));
+                customers.add(new Customer( customerId,  customerName,customerAddress,customerPhone,customerEmail,account,password));
             }
         } catch (SQLException e) {
             e.printStackTrace();

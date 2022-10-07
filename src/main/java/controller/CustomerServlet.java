@@ -1,7 +1,7 @@
 package controller;
 
 
-import dao.CustomerDAO;
+import DAO.CustomerDAO;
 import model.Customer;
 
 import javax.servlet.RequestDispatcher;
