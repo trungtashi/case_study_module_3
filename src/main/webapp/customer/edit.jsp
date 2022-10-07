@@ -50,6 +50,21 @@
             </td>
         </tr>
             <tr>
+                <th>Tài khoản:</th>
+                <td>
+                    <input type="text" name="account" size="45"
+                           value="<c:out value='${customer.account}' />"
+                    />
+                </td>
+            </tr><tr>
+            <th>Mật khẩu:</th>
+            <td>
+                <input type="text" name="password" size="45"
+                       value="<c:out value='${customer.password}' />"
+                />
+            </td>
+        </tr>
+            <tr>
                 <td colspan="2" align="center">
                     <input type="submit" value="Lưu lại"/>
                 </td>

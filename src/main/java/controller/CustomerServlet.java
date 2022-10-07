@@ -115,6 +115,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
+        int customerId = Integer.parseInt(request.getParameter("customerId"));
         String customerName = request.getParameter("customerName");
         String customerAddress = request.getParameter("customerAddress");
         String customerPhone = request.getParameter("customerPhone");
