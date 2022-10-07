@@ -1,6 +1,6 @@
 package controller;
 
-import DAO.CategoryDao;
+import dao.CategoryDao;
 import model.Category;
 
 import javax.servlet.*;
