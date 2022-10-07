@@ -13,9 +13,9 @@
 </head>
 <body>
 <center>
-    <h1>User Management</h1>
+    <h1>Category Management</h1>
     <h2>
-        <a href="category?action=category">List All Users</a>
+        <a href="category?action=category">List All Category</a>
     </h2>
 </center>
 <div align="center">

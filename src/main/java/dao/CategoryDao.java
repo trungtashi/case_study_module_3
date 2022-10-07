@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 
 import connection.ConnectionCMS;
 import model.Category;
@@ -92,15 +92,20 @@ public CategoryDao(){
     @Override
     public boolean updateCategory(Category category) throws SQLException {
         boolean rowUpdated;
-        try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_CATEGORY_SQL);) {
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(UPDATE_CATEGORY_SQL);) {
             statement.setString(1, category.getType());
             statement.setString(2, category.getDescription());
+            statement.setInt(3, category.getId());
 
             rowUpdated = statement.executeUpdate() > 0;
         }
         return rowUpdated;
     }
 
+    public static void main(String[] args) {
+
+    }
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
