@@ -13,6 +13,10 @@ public class Stock {
         this.book_id = book_id;
         this.quantity = quantity;
     }
+    public Stock(int book_id, int quantity) {
+        this.book_id = book_id;
+        this.quantity = quantity;
+    }
 
     public int getId() {
         return id;
