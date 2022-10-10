@@ -130,11 +130,11 @@ public class BookServlet extends HttpServlet {
         RequestDispatcher dispatcher =request.getRequestDispatcher("book/list.jsp");
         dispatcher.forward(request,response);
     }
-    private void searchBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("search");
+private void searchBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String name = request.getParameter("search");
         List<Book> books = bookDAO.searchByName(name);
         request.setAttribute("listBook", books);
         RequestDispatcher dispatcher = request.getRequestDispatcher("book/list.jsp");
         dispatcher.forward(request, response);
-    }
+}
 }
