@@ -16,10 +16,8 @@ public class CategoryDao implements ICategory {
     private static final String INSERT_CATEGORY_SQL = "INSERT INTO category (type, description) VALUES (?, ?);";
     private static final String SELECT_ALL_CATEGORY = "select * from category";
     private static final String SELECT_CATEGORY_BY_ID = "select * from category where id =?";
-<<<<<<< HEAD
+
     private static final String SELECT_CATEGORY_BY_TYPE = "select id,type,description from category where type =?";
-=======
->>>>>>> trung
     private static final String DELETE_CATEGORY_SQL = "delete from category where id = ?;";
     private static final String UPDATE_CATEGORY_SQL = "update category set type = ?, description= ? where id = ?;";
 

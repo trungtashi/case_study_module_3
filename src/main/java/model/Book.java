@@ -23,7 +23,14 @@ public class Book {
         this.image = image;
         this.description = description;
     }
+    public Book(String name, String author, double price, String image, String description) {
 
+        this.name = name;
+        this.author = author;
+        this.price = price;
+        this.image = image;
+        this.description = description;
+    }
     public Book(int id, String code, String name, String author, double price, String image, String description) {
         this.id = id;
         this.code = code;

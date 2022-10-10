@@ -2,10 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-    <title>JSP - Hello World</title>
-
-=======
     <title>Trang chủ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -20,7 +16,6 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
->>>>>>> trung
 </head>
 <body>
 <!-- Header -->
@@ -199,66 +194,21 @@
         </div>
         <!-- Book -->
         <div class="row mt-3">
-            <div class="col-3 book">
-                <div class="card">
-                    <img class="card-img-top" src="img/book-1.jpg" alt="Book 1">
-                    <div class="card-body">
-                        <h4 class="card-title">The Little Book - Quản trị rủi do trong đầu tư</h4>
-                        <p class="card-text">Some example text.</p>
-                        <button class="btn btn-primary col-3">Buy</button>
+            <c:forEach items="${listBook}" var="book"> Item
+                <div class="col-3 book">
+                    <div class="card">
+                        <img class="card-img-top" src=" <c:out value="${book.image}"></c:out>"> alt="Book 1">
+                        <div class="card-body">
+                            <h4 class="card-title"><c:out value="${book.name}"/></h4>
+                            <p class="card-text"><c:out value="${book.author}"/></p>
+                            <p class="card-text"><c:out value="${book.price}"/></p>
+                            <button class="btn btn-primary col-3">Buy</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-3 book">
-                <div class="card">
-                    <img class="card-img-top" src="img/book-1.jpg" alt="Book 1">
-                    <div class="card-body">
-                        <h4 class="card-title">The Little Book - Quản trị rủi do trong đầu tư</h4>
-                        <p class="card-text">Some example text.</p>
-                        <button class="btn btn-primary col-3">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 book">
-                <div class="card">
-                    <img class="card-img-top" src="img/book-1.jpg" alt="Book 1">
-                    <div class="card-body">
-                        <h4 class="card-title">The Little Book - Quản trị rủi do trong đầu tư</h4>
-                        <p class="card-text">Some example text.</p>
-                        <button class="btn btn-primary col-3">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 book">
-                <div class="card">
-                    <img class="card-img-top" src="img/book-1.jpg" alt="Book 1">
-                    <div class="card-body">
-                        <h4 class="card-title">The Little Book - Quản trị rủi do trong đầu tư</h4>
-                        <p class="card-text">Some example text.</p>
-                        <button class="btn btn-primary col-3">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 book">
-                <div class="card">
-                    <img class="card-img-top" src="img/book-1.jpg" alt="Book 1">
-                    <div class="card-body">
-                        <h4 class="card-title">The Little Book - Quản trị rủi do trong đầu tư</h4>
-                        <p class="card-text">Some example text.</p>
-                        <button class="btn btn-primary col-3">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 book">
-                <div class="card">
-                    <img class="card-img-top" src="img/book-1.jpg" alt="Book 1">
-                    <div class="card-body">
-                        <h4 class="card-title">The Little Book - Quản trị rủi do trong đầu tư</h4>
-                        <p class="card-text">Some example text.</p>
-                        <button class="btn btn-primary col-3">Buy</button>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
+
+
         </div>
         <!-- End book -->
     </div>
