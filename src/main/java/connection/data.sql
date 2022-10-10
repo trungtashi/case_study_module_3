@@ -1,5 +1,6 @@
-create database bookstore;
-use bookstore;
+create database webbansach;
+use webbansach;
+
 ## Thể loại:
 create table category
 (
@@ -7,16 +8,27 @@ create table category
     type        varchar(255),
     description varchar(255)
 );
-## Sách
-create table books
+## Tác giả:
+create table author
 (
+    id          int auto_increment primary key,
+    name        varchar(255) not null,
+    yearBorn    date         not null,
+    national    varchar(255),
+    description varchar(255)
+);
+## Sách
+create table books(
     id          int primary key auto_increment,
     code        varchar(255) not null,
     name        varchar(255) not null,
-    author   varchar(255) not null,
+    author_id   int          not null,
+    foreign key (author_id) references author (id),
     price       double       not null,
-    image      varchar(255),
-    description nvarchar(255)
+    category_id int          not null,
+    foreign key (category_id) references category (id),
+    imgage      varchar(255),
+    description varchar(255)
 );
 # Danh mục sách cùng thể loại:
 create table book_category
@@ -27,26 +39,23 @@ create table book_category
     foreign key (category_id) references books (id)
 );
 ## Kho:
-create table stock
-(
-    id int primary key auto_increment,
-    book_id int not null,
-    foreign key (book_id) references books (id),
-    quantity int
-);
+        create table stock
+        (
+        id int primary key auto_increment,
+        book_id int not null,
+        foreign key (book_id) references books (id),
+        quantity int
+        );
 ## Khách hàng:
 create table customer
 (
     id        int primary key auto_increment,
     name      varchar(255) not null,
-    age       int          not null,
-    gender    varchar(255) not null,
     address   varchar(255),
     phone     varchar(255) not null,
     email     varchar(255) not null,
     account   varchar(255) not null,
     password  varchar(255) not null,
-    startdate date         not null,
     status varchar(255) default 'ACTIVATE'
 );
 ## Đơn hàng:
@@ -62,11 +71,17 @@ create table ordersdetail
 (
     id        int primary key auto_increment,
     orders_id int,
-    foreign key (orders_id) references orderS (id),
+   #  foreign key (orders_id) references orderS (id),
     book_id   int,
-    foreign key (book_id) references books (id),
+    # foreign key (book_id) references books (id),
     quantity  int not null
 );
+use webbansach;
+# # Chạy dòng lệnh này để đổi tên cột imgage
+# alter table books rename column imgage to image;
+# alter table books rename column author_id to author;
+
+# Book:
 select * from books;
 ## Thêm sách
 insert into books (code, name, author, price, image, description) values
