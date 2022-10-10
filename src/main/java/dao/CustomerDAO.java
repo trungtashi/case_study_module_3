@@ -95,7 +95,7 @@ public class CustomerDAO implements ICustomerDAO{
             statement.setInt(1, id);
             rowDeleted = statement.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.out.println("Xoa that bai");
+            System.out.println("Xoá thất bại!!!!");
         }
         return rowDeleted;
     }
