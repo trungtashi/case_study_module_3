@@ -79,9 +79,9 @@ public class CategoryServlet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        Category category = categoryDao.selectCategory(id);
+        Category existingCategory  = categoryDao.selectCategory(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("category/editCategory.jsp");
-        request.setAttribute("category", category);
+        request.setAttribute("category", existingCategory );
         dispatcher.forward(request, response);
 
     }

@@ -16,7 +16,11 @@
 <body>
 <h1 class="text-center">List Category</h1>
 <h2 class="text-center">
+<<<<<<< HEAD
     <a href="/category?action=create">Add New Category</a>
+=======
+    <a  href="/category?action=create">Add New Category</a>
+>>>>>>> trung
 </h2>
 <table class="table table-hover">
     <tr>

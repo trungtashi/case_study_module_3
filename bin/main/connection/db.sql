@@ -113,5 +113,9 @@ insert into customer(name, age, gender, address, phone, email, account, password
 select * from orders;
 insert into orders(customer_id, dateBuy) values
                                              (2,'2022-10-01'),
+<<<<<<< HEAD
                                              (1,'2022-10-04');
 select * from books;
+=======
+                                             (1,'2022-10-04');
+>>>>>>> trung
