@@ -36,8 +36,8 @@
                     <ul>
                         <li><i class="fa-solid fa-gift"></i><a href="#">Ưu đãi & tiện ích</a></li>
                         <li><i class="fa-solid fa-check-to-slot"></i><a href="#">Kiểm tra đơn hàng</a></li>
-                        <li><i class="fa-solid fa-right-to-bracket"></i><a href="#">Đăng nhập</a></li>
-                        <li><i class="fa-solid fa-user-plus"></i><a href="#">Đăng ký</a></li>
+                        <li><i class="fa-solid fa-right-to-bracket"></i><a href="login/login.jsp">Đăng nhập</a></li>
+                        <li><i class="fa-solid fa-user-plus"></i><a href="login/register.jsp">Đăng ký</a></li>
                     </ul>
                 </div>
             </div>
