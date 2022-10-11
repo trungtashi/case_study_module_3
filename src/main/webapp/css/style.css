@@ -62,7 +62,6 @@ a i{
 }
 .header-1 ul li:hover{
     background-color: #fff;
-    padding: auto;
 }
 .header-1 i{
     color: #777;
@@ -74,7 +73,7 @@ a i{
     line-height: 40px;
 }
 .header-2 i{
-    font-size: 30px;
+    font-size: 25px;
     color: #f15c22;
     line-height: 63px;
 }
@@ -172,6 +171,6 @@ a i{
 i.fa-cart-shopping {
     line-height: 63px;
     transform: rotateY(180deg);
-    font-size:30px;
+    font-size:25px;
     color:#f15c22
 }

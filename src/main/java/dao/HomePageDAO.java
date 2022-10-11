@@ -76,14 +76,12 @@ public class HomePageDAO implements IHomePage{
             preparedStatement.setString(1,"%"+input_name+"%");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                int id= resultSet.getInt("id");
-                String code=resultSet.getString("code");
                 String name=resultSet.getString("name");
                 String author=resultSet.getString("author");
                 Double price=resultSet.getDouble("price");
                 String image=resultSet.getString("image");
                 String description=resultSet.getString("description");
-                books.add(new Book(id,code,name,author,price,image,description));
+                books.add(new Book(name,author,price,image,description));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

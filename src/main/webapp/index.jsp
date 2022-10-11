@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +50,7 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="col-2 p-0">
-                    <a href="index.html"><img class="logo" src="img/logo-new.png" alt="logo"></a>
+                    <a href="index.jsp"><img class="logo" src="img/logo-new.png" alt="logo"></a>
                 </div>
                 <!-- End logo -->
                 <!-- Search -->
@@ -194,14 +195,15 @@
         </div>
         <!-- Book -->
         <div class="row mt-3">
-            <c:forEach items="${listBook}" var="book"> Item
+            <c:forEach items="${listBook}" var="book">
                 <div class="col-3 book">
                     <div class="card">
-                        <img class="card-img-top" src=" <c:out value="${book.image}"></c:out>"> alt="Book 1">
+                        <img class="card-img-top" src="<c:out value="${book.image}"></c:out>">
                         <div class="card-body">
                             <h4 class="card-title"><c:out value="${book.name}"/></h4>
                             <p class="card-text"><c:out value="${book.author}"/></p>
                             <p class="card-text"><c:out value="${book.price}"/></p>
+                            <p class="card-text"><c:out value="${book.description}"/></p>
                             <button class="btn btn-primary col-3">Buy</button>
                         </div>
                     </div>
